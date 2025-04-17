@@ -21,3 +21,6 @@ class SauceDemo:
     def get_password(self):
         passwords = self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".login_password")))
         self.password = passwords.text.replace("Password for all users:", "").strip()
+
+    def quit(self):
+        self.driver.quit()
